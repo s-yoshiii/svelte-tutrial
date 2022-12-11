@@ -31,5 +31,10 @@
 <p>The error is {error}</p>
 {/await}
 <div>
-    <a use:link={{href:"/about"}}>About</a>
+    <p>
+        <a use:link={{href:"/about"}}>About</a>
+    </p>
+    <p>
+        <a use:link={{href:"/event"}}>Event</a>
+    </p>
 </div>
