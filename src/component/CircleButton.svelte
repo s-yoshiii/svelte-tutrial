@@ -1,6 +1,12 @@
-<script></script>
+<script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+  function sayHello() {
+    dispatch("showText", { text: "Hello" });
+  }
+</script>
 
-<a href="/" class="circleBtnWrap">
+<div class="circleBtnWrap" on:click={sayHello}>
   <div class="circleBtnWrap__inner">
     <div class="circleBtn">
       <svg viewBox="0 0 110 110">
@@ -9,11 +15,12 @@
     </div>
     <div class="circleBtn__txt">リンク名</div>
   </div>
-</a>
+</div>
 
 <style lang="scss">
   .circleBtnWrap {
     display: inline-block;
+    cursor: pointer;
     &__inner {
       display: flex;
       justify-content: center;

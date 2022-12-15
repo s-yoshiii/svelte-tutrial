@@ -6,9 +6,12 @@
     m.x = event.clientX;
     m.y = event.clientY;
   }
+  function handleMessage(event) {
+    alert(event.detail.text);
+  }
 </script>
 
-<CircleButton />
+<CircleButton on:showText={handleMessage} />
 <div class="container" on:mousemove={handleMousemove}>
   The mouse position is {m.x} x {m.y}
 </div>
