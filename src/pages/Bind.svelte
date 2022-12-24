@@ -1,8 +1,10 @@
 <script>
+  import { marked } from "marked";
   let name = "";
   let a = 1;
   let b = 2;
   let checked = false;
+  let text = `Some words are *italic*, some are **bold**`;
 </script>
 
 <input bind:value={name} placeholder="enter your name" />
@@ -30,3 +32,7 @@
 {/if}
 
 <button disabled={!checked}> Subscribe </button>
+
+<textarea bind:value={text} />
+
+{@html marked(text)}
